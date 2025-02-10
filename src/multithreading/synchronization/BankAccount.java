@@ -14,11 +14,10 @@ public class BankAccount {
 
     public  void withdraw(int amount){
         try{
-            if(lock.tryLock(10000, TimeUnit.MILLISECONDS)){
+            if(lock.tryLock(10000, TimeUnit.MILLISECONDS)) {
                 if (amount > balance) {
-                    System.out.println(Thread.currentThread().getName()+" INSUFFICIENT BALANCE");
-                }
-                else{
+                    System.out.println(Thread.currentThread().getName() + " INSUFFICIENT BALANCE");
+                } else {
                     try {
                         System.out.println(Thread.currentThread().getName() + " performing");
                         try {
@@ -31,15 +30,12 @@ public class BankAccount {
                         balance = balance - amount;
 
 
-                    }catch(Exception e){
+                    } catch (Exception e) {
                         e.printStackTrace();
                     }
 
 
                 }
-
-
-
             }
             else {
                 System.out.println(Thread.currentThread().getName() +" locked , cant access now..");
