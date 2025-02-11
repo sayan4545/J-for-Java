@@ -21,7 +21,7 @@ public class BankAccount {
                     try {
                         System.out.println(Thread.currentThread().getName() + " performing");
                         try {
-                            Thread.sleep(3000);
+                            Thread.sleep(6000);
                         } catch (Exception e) {
                             e.printStackTrace();
                         }
@@ -43,8 +43,9 @@ public class BankAccount {
         }catch(Exception e){
             e.printStackTrace();;
         }
-        finally {
+        finally{
             lock.unlock();
+
         }
     }
 }
