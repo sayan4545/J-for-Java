@@ -1,5 +1,7 @@
 package ArraysAndArrayList.basics;
 
+import java.util.Arrays;
+
 public class CreationOfArray {
     public static void main(String[] args) {
         int [] arr = new int[5];
