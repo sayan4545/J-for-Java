@@ -1,8 +1,10 @@
 package java8features.functionalInterfaces;
 
-public class Test implements F1{
-    @Override
-    public void printName() {
-        System.out.println("Sayan Chatterjee");
+public class Test{
+    public static void main(String[] args) {
+        F1 f1= ()->{
+            System.out.println("Hello");
+        };
+        f1.printName();
     }
 }
