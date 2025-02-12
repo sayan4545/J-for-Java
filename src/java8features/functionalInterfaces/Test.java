@@ -6,5 +6,11 @@ public class Test{
             System.out.println("Hello");
         };
         f1.printName();
+        Calculate cc = (int a, int b, int c)->{;
+            return a+b+c;
+
+        };
+        int add = cc.add(8,9,10);
+        System.out.println(add);
     }
 }
