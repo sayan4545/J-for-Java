@@ -12,4 +12,8 @@ public class ClassOne implements I1{
         m1();
         return "Sayan Chatterjee";
     }
+    @Override
+    public void m1(){
+        System.out.println("Inside overriden m1");
+    }
 }
