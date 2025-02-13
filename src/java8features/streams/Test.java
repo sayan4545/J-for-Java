@@ -1,5 +1,6 @@
 package java8features.streams;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.function.*;
 
@@ -52,5 +53,15 @@ public class Test {
         BiPredicate<Integer,Integer> isSumEven = (a,b)->(a+b)%2==0;
         System.out.println(isSumEven.test(4,5));//false;
         System.out.println(isSumEven.test(6,8));//true
+        BiFunction<Integer,Integer,Integer> prodOfTwo = (a,b)->a*b;
+        BiConsumer<Integer,String> toStringof = (a,b)->System.out.println(a+" "+b);
+        toStringof.accept(45,"Sayan");
+
+
+        List<String> people = Arrays.asList("Sayan", "Chandrika", "Rina");
+        people.forEach(System.out::println);//using method reference
+        people.forEach(x-> System.out.print(x+" ")); //using lambda expression
+
+
     }
 }
