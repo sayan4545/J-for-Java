@@ -56,5 +56,10 @@ public class TerminalOperations {
         //summing values
         List<Integer> integers = Arrays.asList(3,5,7,9);
         System.out.println(integers.stream().reduce((x,y)->x+y).get());
+        System.out.println(integers.stream().reduce(Integer::sum).get());
+
+        // countinmg occurence of character
+        String sequence = "Hello World";
+        System.out.println(sequence.chars().filter(x->x=='l').count());
     }
 }
