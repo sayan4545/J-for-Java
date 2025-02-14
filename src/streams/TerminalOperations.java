@@ -5,6 +5,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class TerminalOperations {
     public static  void main(String[] args) {
@@ -43,7 +44,17 @@ public class TerminalOperations {
         System.out.println(secondLowestSalary);
 
         // These all are short circuit operations. Once they find the item, the operation stops.
+        List<String> names = Arrays.asList("Ana","Bob","Charlie","David");
+        // find names that has length greater than 3.
+        List<String> collected = names.stream().filter(x -> x.length() > 3).collect(Collectors.toList());
+        System.out.println(collected);
+        // Squaring and sorting numbers
 
+        List<Integer> numbers = Arrays.asList(2,5,3,4,7,6,9,1);
+        System.out.println(numbers.stream().map(x->x*x).sorted().collect(Collectors.toList()));
 
+        //summing values
+        List<Integer> integers = Arrays.asList(3,5,7,9);
+        System.out.println(integers.stream().reduce((x,y)->x+y).get());
     }
 }
