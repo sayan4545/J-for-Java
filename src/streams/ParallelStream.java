@@ -11,9 +11,14 @@ public class ParallelStream {
 
         List<Integer> integers = Stream.iterate(1,x->x+1).limit(20000).toList();
         long startTime = System.currentTimeMillis();
-        List<Long> integerFact = integers.stream().map(x -> fact(x)).toList();
+        List<Long> integerFact = integers.parallelStream().map(x -> fact(x)).toList();
         long endTime = System.currentTimeMillis();
         System.out.println("Time taken in the process: " + (endTime-startTime) +" ms");
+
+//        long startTimeNormalStream = System.currentTimeMillis();
+//        List<Long> integerFactorial = integers.stream().map(x->fact(x)).toList();
+//        long endTimeNormalStream = System.currentTimeMillis();
+//        System.out.println("Time taken in the process : "+ (endTimeNormalStream-startTimeNormalStream)+ " ms");
 //        List<Long> integerFactorials = integers.parallelStream().map(x -> fact(x)).toList();
 //        long endTime = System.currentTimeMillis();
 //        System.out.println("Time taken in the process: " + (endTime-startTime) +" ms");
