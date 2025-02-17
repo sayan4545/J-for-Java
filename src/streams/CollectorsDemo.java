@@ -51,8 +51,14 @@ public class CollectorsDemo {
         System.out.println(groupedNewList2);
 
         List<String> fruits = Arrays.asList("Orange","Apple","Apple","Kiwi","Orange");
-        Map<String, Integer> newmap = fruits.stream().collect(Collectors.toMap((k -> k), v -> 1, (x, y) -> x + y));
+        Map<String, Integer> newmap = fruits.stream()
+                .collect(Collectors.toMap((k -> k), v -> 1, (x, y) -> x + y));
         System.out.println(newmap);
+
+        List<String> veggies = Arrays.asList("Potato","Onion","Potato","onion","beetroot");
+        Map<String, Integer> newVeggiesmap = veggies.stream()
+                .collect(Collectors.toMap(k -> k.toUpperCase(), v -> 1, (x, y) -> x + y));
+        System.out.println(newVeggiesmap);
     }
 
 }
