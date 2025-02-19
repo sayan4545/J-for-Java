@@ -1,5 +1,4 @@
 package SystemDesign.LowLevelDesign.basics.SOLID;
-
 public class CrediitCardProcessopr extends PaymentProcessor{
     @Override
     public void processpayment(double amount) {

@@ -8,5 +8,7 @@ SOLID -->  Set of five design principles in software to make the code, readble,m
 S--> SRP--> Single responsibilty principle.
 O--> Open/Closed principle --> Open for extension , closed for modification.
 L--> Liskov substitution principle
+I--> Interface seggregation principle.
+D--> Dependency inversion principle.
 
  */
