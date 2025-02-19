@@ -9,6 +9,38 @@ class StringCompare implements Comparator<String>{
         return o1.length() -o2.length();
     }
 }
+class Student{
+    String name;
+    int rno;
+    double marksEnglish;
+    double marksMaths;
+    double marksPhysics;
+    public Student(String name,int rno,double marksEnglish,double marksMaths,double marksPhysics){
+        this.marksEnglish=marksEnglish;
+        this.name=name;
+        this.marksMaths= marksMaths;
+        this.marksPhysics = marksPhysics;
+        this.rno=rno;
+    }
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "name='" + name + '\'' +
+                ", rno=" + rno +
+                ", marksEnglish=" + marksEnglish +
+                ", marksMaths=" + marksMaths +
+                ", marksPhysics=" + marksPhysics +
+                '}';
+    }
+}
+class StudentCompare implements Comparator<Student>{
+
+    @Override
+    public int compare(Student o1, Student o2) {
+        return (int)((o2.marksMaths+o2.marksPhysics+o2.marksEnglish)-(o1.marksPhysics+o1.marksEnglish+o1.marksMaths));
+    }
+}
 
 public class ArrayListImpl{
     public static void main(String[] args) {
@@ -97,6 +129,16 @@ public class ArrayListImpl{
         System.out.println("After sorting in descending order of the length of the strings: "+ strList);
         strList.sort(new StringCompare());
         System.out.println("Sorted in ascending order of their lengths: " + strList);
+
+        Student s1 = new Student("Sayan Chatterjee",7,78,89,100);
+        Student s2 = new Student("Chandrika Dey",10,100,100,100);
+        Student s3 = new Student("Anuska Chatterjee",1,89,78.98,88);
+
+        List<Student> studentList = new ArrayList<>(Arrays.asList(s1,s2,s3));
+        studentList.sort(new StudentCompare());
+        System.out.println(studentList);
+
+
 
 
 
