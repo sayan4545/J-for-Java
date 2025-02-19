@@ -34,6 +34,39 @@ class Student{
                 '}';
     }
 }
+class UniversityStudent{
+    private String name;
+    private double gpa;
+    public UniversityStudent(String name,double gpa){
+        this.name = name;
+        this.gpa = gpa;
+
+    }
+
+    @Override
+    public String toString() {
+        return "UniversityStudent{" +
+                "name='" + name + '\'' +
+                ", gpa=" + gpa +
+                '}';
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public double getGpa() {
+        return gpa;
+    }
+
+    public void setGpa(double gpa) {
+        this.gpa = gpa;
+    }
+}
 class StudentCompare implements Comparator<Student>{
 
     @Override
@@ -110,39 +143,48 @@ public class ArrayListImpl{
 //        String[] newArrayStr = newList.toArray(new String[0]);
 //        System.out.println(Arrays.toString(newArrayStr));
 
-        List<Integer> integerList = new ArrayList<>(Arrays.asList(17,6,3,0,1,19));
-        integerList.add(56);
-        //Collections.sort(integerList);
-        //integerList.sort(null);
-        System.out.println(integerList);
-        integerList.sort((o1,o2)->o1-o2);
-        System.out.println("After sorting: "+ integerList);
-        // To sort in descending order
-        integerList.sort((o1,o2)->o2-o1);
-        System.out.println("After sorting in descending order: " + integerList);
+//        List<Integer> integerList = new ArrayList<>(Arrays.asList(17,6,3,0,1,19));
+//        integerList.add(56);
+//        //Collections.sort(integerList);
+//        //integerList.sort(null);
+//        System.out.println(integerList);
+//        integerList.sort((o1,o2)->o1-o2);
+//        System.out.println("After sorting: "+ integerList);
+//        // To sort in descending order
+//        integerList.sort((o1,o2)->o2-o1);
+//        System.out.println("After sorting in descending order: " + integerList);
+//
+//        List<String> strList = new ArrayList<>(Arrays.asList("Bob","candice","mark"));
+//        System.out.println(strList);
+//        strList.sort((o1,o2)->o1.length()-o2.length());
+//        System.out.println("After sorting in ascending order of the length of the strings : "+strList);
+//        strList.sort((o1,o2)->o2.length()-o1.length());
+//        System.out.println("After sorting in descending order of the length of the strings: "+ strList);
+//        strList.sort(new StringCompare());
+//        System.out.println("Sorted in ascending order of their lengths: " + strList);
+//
+//        Student s1 = new Student("Sayan Chatterjee",7,78,89,100);
+//        Student s2 = new Student("Chandrika Dey",10,100,100,100);
+//        Student s3 = new Student("Anuska Chatterjee",1,89,78.98,88);
+//
+//        List<Student> studentList = new ArrayList<>(Arrays.asList(s1,s2,s3));
+//        studentList.sort(new StudentCompare().reversed());
+//        System.out.println(studentList);
+        UniversityStudent u1 = new UniversityStudent("Akshit",3.67);
+        UniversityStudent u2 = new UniversityStudent("Sayan",3.99);
+        UniversityStudent u3 = new UniversityStudent("Chandrika",4.00);
+        UniversityStudent u4 = new UniversityStudent("Sayantan",4.00);
+        List<UniversityStudent> universitystudentList = new ArrayList<>(Arrays.asList(u1,u2,u3,u4));
 
-        List<String> strList = new ArrayList<>(Arrays.asList("Bob","candice","mark"));
-        System.out.println(strList);
-        strList.sort((o1,o2)->o1.length()-o2.length());
-        System.out.println("After sorting in ascending order of the length of the strings : "+strList);
-        strList.sort((o1,o2)->o2.length()-o1.length());
-        System.out.println("After sorting in descending order of the length of the strings: "+ strList);
-        strList.sort(new StringCompare());
-        System.out.println("Sorted in ascending order of their lengths: " + strList);
+        Comparator<UniversityStudent> universityStudentComparator =
+                Comparator.comparing(UniversityStudent::getGpa)
+                        .reversed()
+                        .thenComparing(UniversityStudent::getName);
 
-        Student s1 = new Student("Sayan Chatterjee",7,78,89,100);
-        Student s2 = new Student("Chandrika Dey",10,100,100,100);
-        Student s3 = new Student("Anuska Chatterjee",1,89,78.98,88);
-
-        List<Student> studentList = new ArrayList<>(Arrays.asList(s1,s2,s3));
-        studentList.sort(new StudentCompare());
-        System.out.println(studentList);
-
-
-
-
-
-
+        universitystudentList.sort(universityStudentComparator);
+        for(UniversityStudent u: universitystudentList){
+            System.out.println(u.getName()+": "+u.getGpa());
+        }
 
     }
 
