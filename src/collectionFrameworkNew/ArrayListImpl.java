@@ -74,6 +74,21 @@ class StudentCompare implements Comparator<Student>{
         return (int)((o2.marksMaths+o2.marksPhysics+o2.marksEnglish)-(o1.marksPhysics+o1.marksEnglish+o1.marksMaths));
     }
 }
+class UniersityStudentCompare implements Comparator<UniversityStudent>{
+
+    @Override
+    public int compare(UniversityStudent o1, UniversityStudent o2) {
+        if((o2.getGpa()-o1.getGpa()>0)){
+            return 1;
+        }
+        if((o2.getGpa()-o1.getGpa())<0){
+            return -1;
+        }
+        else{
+            return (o1.getName().compareTo(o2.getName()));
+        }
+    }
+}
 
 public class ArrayListImpl{
     public static void main(String[] args) {
@@ -175,13 +190,13 @@ public class ArrayListImpl{
         UniversityStudent u3 = new UniversityStudent("Chandrika",4.00);
         UniversityStudent u4 = new UniversityStudent("Sayantan",4.00);
         List<UniversityStudent> universitystudentList = new ArrayList<>(Arrays.asList(u1,u2,u3,u4));
+        universitystudentList.sort(new UniersityStudentCompare());
+//        Comparator<UniversityStudent> universityStudentComparator =
+//                Comparator.comparing(UniversityStudent::getGpa)
+//                        .reversed()
+//                        .thenComparing(UniversityStudent::getName);
 
-        Comparator<UniversityStudent> universityStudentComparator =
-                Comparator.comparing(UniversityStudent::getGpa)
-                        .reversed()
-                        .thenComparing(UniversityStudent::getName);
-
-        universitystudentList.sort(universityStudentComparator);
+//        universitystudentList.sort(universityStudentComparator);
         for(UniversityStudent u: universitystudentList){
             System.out.println(u.getName()+": "+u.getGpa());
         }
