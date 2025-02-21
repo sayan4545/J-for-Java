@@ -15,5 +15,7 @@ public class NavigableMapImpl {
         navigableMap.put(3,"Three");
 
         System.out.println("Printing the navigable map :" + navigableMap);
+        System.out.println(navigableMap.lowerKey(4));//3
+        System.out.println(navigableMap.higherKey(2));
     }
 }
