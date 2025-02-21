@@ -1,4 +1,4 @@
-package collectionFrameworkNew;
+package CollectIonFrameWorkAndMap;
 
 import java.util.*;
 

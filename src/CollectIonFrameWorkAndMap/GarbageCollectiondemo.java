@@ -1,6 +1,4 @@
-package collectionFrameworkNew;
-
-import maps.WeakHashMapImpl;
+package CollectIonFrameWorkAndMap;
 
 import java.lang.ref.WeakReference;
 

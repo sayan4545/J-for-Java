@@ -1,9 +1,8 @@
-package mapsnew;
+package CollectIonFrameWorkAndMap.mapsnew;
 
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import java.util.Set;
 
 public class LinkedHashMapImpl {
     public static void main(String[] args) {

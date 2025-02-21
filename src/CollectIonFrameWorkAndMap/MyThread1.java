@@ -1,4 +1,4 @@
-package collectionFrameworkNew;
+package CollectIonFrameWorkAndMap;
 
 public class MyThread1 extends Thread{
     @Override

@@ -1,8 +1,6 @@
-package collectionFrameworkNew;
+package CollectIonFrameWorkAndMap;
 
-import java.util.HashMap;
 import java.util.Hashtable;
-import java.util.Map;
 
 public class HashtableImpl {
     public static void main(String[] args) {

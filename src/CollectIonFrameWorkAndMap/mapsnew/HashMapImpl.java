@@ -1,4 +1,4 @@
-package mapsnew;
+package CollectIonFrameWorkAndMap.mapsnew;
 
 import java.util.HashMap;
 import java.util.Map;

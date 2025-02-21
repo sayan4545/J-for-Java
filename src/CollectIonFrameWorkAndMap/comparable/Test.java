@@ -1,4 +1,4 @@
-package collectionFrameworkNew.comparable;
+package CollectIonFrameWorkAndMap.comparable;
 
 import java.util.ArrayList;
 import java.util.List;

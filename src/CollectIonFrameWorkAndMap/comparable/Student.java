@@ -1,4 +1,4 @@
-package collectionFrameworkNew.comparable;
+package CollectIonFrameWorkAndMap.comparable;
 
 public class Student implements Comparable<Student>{
     private String name;
