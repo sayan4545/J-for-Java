@@ -19,6 +19,7 @@ public class LinkedHashMapImpl {
             System.out.println(entry.getKey()+" : "+entry.getValue());
         }
         System.out.println("--------");
+        System.out.println("IN CASE OF LINKEDHASHMAP");
 
         for(Map.Entry<String,Integer> entry : map2.entrySet()){
             System.out.println(entry.getKey()+" : "+ entry.getValue());
