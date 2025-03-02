@@ -44,6 +44,12 @@ public class ThreadLifecycleExpl extends Thread{
         }
         System.out.println(t1.getState());// TERMINATED
 
+        /*
+        Thread vs Runnable -->
+        Whenever there is a class that extends anothger class, we cant extend Thread class from that subclass.
+        In that case implementing Runnable interface saves our day.
+         */
+
 
 
     }
