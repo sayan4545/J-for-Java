@@ -19,4 +19,37 @@ public class MultiThreading {
 
 
      */
+    public static void main(String[] args) {
+        System.out.println("Thread is running");
+        System.out.println(Thread.currentThread().getName());
+        /*
+        To create a new thread , either you have to extend the Thread class or
+        implement the Runnable interface.
+         */
+//        World world = new World();
+//        world.start();
+//        for(;;){
+//            System.out.println(Thread.currentThread().getName());
+//        }
+        /*
+        A new class World is created that extends the Thread class .
+        The run() is overridden to constitute the code that constitutes the new
+        thread
+        start() is called to initiate the new thread
+         */
+        /*
+        To implement teh runnable interface we created a new class World2. World2 implemets the Runnable interface
+        A Thread object is created and an object of the World2 class i passed to it. start()
+        method is called to initiate the Thread.
+
+        In both the methods, the run() contains the code that will be executed when the thread is initiated.
+         */
+        World2 world2 =  new World2();
+        Thread t1 = new Thread(world2);
+        t1.start();
+        for(;;){
+            System.out.println(Thread.currentThread().getName());
+        }
+
+    }
 }
