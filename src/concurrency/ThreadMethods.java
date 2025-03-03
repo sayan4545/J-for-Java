@@ -11,15 +11,21 @@ public class ThreadMethods extends Thread{
     4. join() --> The caller thread waits for the thread to finish executing.
     5. setPriority() --> gives hiont to the jvm to prioritize multiple running threads.
     6. interrupt() --> interrupts the current flow.
+    7. yield() --> Hints the scheduler that the current thread is willing to yield its current state to the procrssor.
+    8. setDaemon() -->
      */
     @Override
     public void run(){
-        try{
-            Thread.sleep(1000);
-
-        }catch(Exception e){
-            System.out.println("Thread interrupted "+ e);
+        for(int i=0;;i++){
+            System.out.println(Thread.currentThread().getName()+" "+i);
+            //Thread.yield();
         }
+//        try{
+//            Thread.sleep(1000);
+//
+//        }catch(Exception e){
+//            System.out.println("Thread interrupted "+ e);
+//        }
 //        for(int i=0;i<5;i++){
 //            String a = "";
 //            for(int j=0;j<10000;j++){
@@ -35,14 +41,21 @@ public class ThreadMethods extends Thread{
     }
 
     public static void main(String[] args) {
-        ThreadMethods t1 = new ThreadMethods("MAX");
-        ThreadMethods t2 = new ThreadMethods("NORM");
-        ThreadMethods t3 = new ThreadMethods("MIN");
-        t1.setPriority(MAX_PRIORITY);
-        t2.setPriority(NORM_PRIORITY);
-        t3.setPriority(MIN_PRIORITY);
+        ThreadMethods t1 = new ThreadMethods("Thread 1");
+        //ThreadMethods t2 = new ThreadMethods("Thread 2");
+        //t1.start();
+        t1.setDaemon(true);
         t1.start();
-        t1.interrupt();
+        System.out.println("Main done");
+        //t2.start();
+//        ThreadMethods t1 = new ThreadMethods("MAX");
+//        ThreadMethods t2 = new ThreadMethods("NORM");
+//        ThreadMethods t3 = new ThreadMethods("MIN");
+//        t1.setPriority(MAX_PRIORITY);
+//        //t2.setPriority(NORM_PRIORITY);
+//        //t3.setPriority(MIN_PRIORITY);
+//        t1.start();
+//        t1.interrupt();
         //t2.start();
         //t3.start();
 //        try{
