@@ -15,4 +15,11 @@ public class Test {
         }
         System.out.println(counter.getCount());
     }
+    /*
+    Locking --> Intrinsic and Extrinsic . Intrinsic locking is there in every object.
+    Whenever we use the synchronized() keyword, we make use of this intrinsic locks.
+
+    Extrinsic locking --> These are more advanced set of locks, that we can control, when to lock and where to lock.
+
+     */
 }
